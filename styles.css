@@ -1,0 +1,184 @@
+:root {
+  --bg: #ffffff;
+  --text: #222222;
+  --muted: #777777;
+  --link: #2f6db2;
+  --line: #d9d9d9;
+  --card: #fafafa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.page {
+  width: min(640px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 72px 0;
+}
+
+.header {
+  margin-bottom: 52px;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 18px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+h1 {
+  margin: 0 0 14px;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+}
+
+.brand-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.brand-chip svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.brand-chip--github {
+  color: #181717;
+}
+
+.brand-chip--linkedin {
+  color: #0a66c2;
+}
+
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 0;
+  left: 74px;
+  width: 1px;
+  background: var(--line);
+}
+
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 28px;
+  min-height: 120px;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 69px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+.timeline__date {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.project {
+  padding-bottom: 48px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.project__title {
+  color: var(--text);
+}
+
+.project__title:hover {
+  color: var(--link);
+}
+
+.project__meta {
+  margin: 6px 0 18px;
+  color: var(--muted);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stats a {
+  display: inline-flex;
+}
+
+@media (max-width: 520px) {
+  .page {
+    width: min(100% - 28px, 640px);
+    padding: 40px 0;
+  }
+
+  .timeline::before {
+    left: 54px;
+  }
+
+  .timeline__item {
+    grid-template-columns: 82px 1fr;
+    gap: 20px;
+  }
+
+  .timeline__item::before {
+    left: 49px;
+  }
+
+  .stats {
+    gap: 6px;
+  }
+}
